@@ -1,14 +1,16 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.17;
- contract ICOToken {
-    address public owner;
-    string public name = "ICO";
-    string public symbol = "ICO";
-    uint8 public decimals = 18;
+ 
+contract ICOToken {
+    string public name;
+    string public symbol;
+    uint8 public decimals;
     uint256 public totalSupply;
     
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
+    
+    address public owner;
     
     constructor(string memory _name, string memory _symbol, uint8 _decimals, uint256 _totalSupply) {
         name = _name;
